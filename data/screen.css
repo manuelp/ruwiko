@@ -4,6 +4,24 @@ body {
   font-family: sans-serif;
 }
 
+#header {
+    background-color: #bdf;
+}
+
+#header #title {
+    margin-top: 0;
+    font-size: 3.5em;
+    font-style: oblique;
+}
+
+#header a {
+    text-decoration: none; 
+}
+
+#header a:visited {
+    color: black;
+}
+
 h1, h2 {
   background-color: #fcca30;
 }

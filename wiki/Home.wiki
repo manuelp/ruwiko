@@ -1,4 +1,3 @@
-= RuWiKo =
 This is a [[http://c2.com/cgi/wiki?WikiWikiWeb|wiki]] site compiled using **RuWiKo** (Ruby Wiki Kompiler): a static wiki generator. You can write a wiki with your favorite text editor as a set of text files in your filesystem and compile it to a static site with a single command.
 
 I chosen the name based on its "Japanese feel".
@@ -6,6 +5,7 @@ I chosen the name based on its "Japanese feel".
 == Features ==
 * [[http://www.wikicreole.org/wiki/Creole1.0|Creole 1.0]] markup (extended)
 * Presentation completely personalizable
+* Good print stylesheet
 
 == Requirements ==
 * Ruby 1.9
@@ -21,6 +21,14 @@ When you have all the requirements, you only need to download this repository. F
 hg clone http://bitbucket.org/manuelp/ruwiko
 }}}
 
+== Configuration ==
+There are 4 configuration parameters that you can change editing the //compile.rb// file:
+
+; **TITLE** : This is the name of the site rendered in the header of //every// page. Default - "RuWiKo".
+; **SUBTITLE** : The subtitle of the site that is rendered on the right side of the title. Could be empty. You can even have a newline before the subtitle if you use {{{<BR/>}}} as a prefix. Default - "A simple static wiki compiler."
+; **HTML_DIR** : Directory that will contain the compiled site. Default - "html"
+; **WIKI_DIR** : Directory which contains the text of the wiki pages written in Creole. Default - "wiki"
+
 == Usage ==
 Simply write as many //*.wiki// files as you wish using the [[http://www.wikicreole.org/wiki/Creole1.0|Creole]] syntax in the //wiki// directory, then run the //compile.rb// program:
 
@@ -29,3 +37,10 @@ ruby compile.rb
 }}}
 
 All the compiled wiki pages and the CSS files will be placed under the //html// directory.
+
+== Personalization ==
+You can have a great control on look 'n feel of the generated site by editing the files contained in the //data// directory:
+
+; **default.html** : This is the file that specify the layout of every page. Editing this file you can alter the structure of the page and add anything you want.
+; **screen.css** : The CSS stylesheet that control the presentation of every page rendered on the screen.
+; **print.css** : This stylesheet control the rendering of the page suitable for printing.

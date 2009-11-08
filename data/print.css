@@ -2,6 +2,20 @@ body {
   font-size: small;
 }
 
+#header #title {
+    margin-top: 0;
+    font-size: 3.5em;
+    font-style: oblique;
+}
+
+#header a {
+    text-decoration: none; 
+}
+
+#header a:visited {
+    color: black;
+}
+
 table {
   border: 1px solid;
   border-collapse: collapse;

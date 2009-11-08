@@ -1,6 +1,8 @@
 require 'wiki_creole'
 require 'erb'
 
+TITLE = "RuWiKo"
+SUBTITLE = "A simple static wiki compiler."
 HTML_DIR = "html"
 WIKI_DIR = "wiki"
 
