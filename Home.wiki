@@ -14,7 +14,7 @@ I chosen the name based on its "Japanese feel".
 == Installation ==
 When you have all the requirements, you only need to download this repository. For this step you have two options:
 
-* Download an archive of the last version of //RuWiKo// from the //Download// tab of this site.
+* Download an archive of the last version of //RuWiKo// from  [[http://bitbucket.org/manuelp/ruwiko/downloads/|here]].
 * Use [[http://mercurial.selenic.com/|Mercurial]] to download (and stay up-to-date) the last version:
 
 {{{
