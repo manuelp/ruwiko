@@ -1,0 +1,31 @@
+= RuWiKo =
+This is a [[http://c2.com/cgi/wiki?WikiWikiWeb|wiki]] site compiled using **RuWiKo** (Ruby Wiki Kompiler): a static wiki generator. You can write a wiki with your favorite text editor as a set of text files in your filesystem and compile it to a static site with a single command.
+
+I chosen the name based on its "Japanese feel".
+
+== Features ==
+* [[http://www.wikicreole.org/wiki/Creole1.0|Creole 1.0]] markup (extended)
+* Presentation completely personalizable
+
+== Requirements ==
+* Ruby 1.9
+* [[http://github.com/gmccreight/wikicreole|WikiCreole]]
+
+== Installation ==
+When you have all the requirements, you only need to download this repository. For this step you have two options:
+
+* Download an archive of the last version of //RuWiKo// from the //Download// tab of this site.
+* Use [[http://mercurial.selenic.com/|Mercurial]] to download (and stay up-to-date) the last version:
+
+{{{
+hg clone http://bitbucket.org/manuelp/ruwiko
+}}}
+
+== Usage ==
+Simply write as many //*.wiki// files as you wish using the [[http://www.wikicreole.org/wiki/Creole1.0|Creole]] syntax in the //RuWiKo// directory, then run the //compile.rb// program:
+
+{{{
+ruby compile.rb
+}}}
+
+All the compiled wiki pages and the CSS files will be placed under the //html// subdirectory.

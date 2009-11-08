@@ -1,0 +1,30 @@
+body {
+  width: 65%;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+h1, h2 {
+  background-color: #fcca30;
+}
+
+table {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+td,th { 
+  border: 1px solid;
+  padding: 0 0.5em;
+  text-align: center;
+}
+
+pre {
+    background-color: #dff;
+    width: 85%;
+    margin: 0 auto;
+}
+
+#footer {
+    font-size: x-small;
+}
