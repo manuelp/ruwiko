@@ -22,10 +22,10 @@ hg clone http://bitbucket.org/manuelp/ruwiko
 }}}
 
 == Usage ==
-Simply write as many //*.wiki// files as you wish using the [[http://www.wikicreole.org/wiki/Creole1.0|Creole]] syntax in the //RuWiKo// directory, then run the //compile.rb// program:
+Simply write as many //*.wiki// files as you wish using the [[http://www.wikicreole.org/wiki/Creole1.0|Creole]] syntax in the //wiki// directory, then run the //compile.rb// program:
 
 {{{
 ruby compile.rb
 }}}
 
-All the compiled wiki pages and the CSS files will be placed under the //html// subdirectory.
+All the compiled wiki pages and the CSS files will be placed under the //html// directory.

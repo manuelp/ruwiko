@@ -2,6 +2,7 @@ require 'wiki_creole'
 require 'erb'
 
 HTML_DIR = "html"
+WIKI_DIR = "wiki"
 
 # Delete recursively the compile directory
 def delete_dir dir_name
@@ -27,8 +28,8 @@ end
 
 # Compile with WikiCreole every *.wiki file in the current directory 
 # and place the compiled files in the compile_dir directory.
-def compile_wiki_file(filename, compile_dir)
-  File.open(filename) do |file|
+def compile_wiki_file(filename, wiki_dir, compile_dir)
+  File.open(File.join(wiki_dir, filename)) do |file|
     wiki_file = file.read
     File.open(File.join(HTML_DIR, filename.sub(/\.wiki$/, "")), 'w') do |out_file|
       content = WikiCreole.creole_parse(wiki_file)
@@ -50,10 +51,10 @@ Dir.mkdir(HTML_DIR)
 copy_css('data', HTML_DIR)
 
 # For each *.wiki file, compile it
-dir = Dir.new('.')
-dir.each do |file| # TODO Usare Dir#glob
+dir = Dir.new('wiki')
+dir.each do |file| 
   if file =~ /.*wiki$/
     puts "Compiling #{file} -> #{HTML_DIR}"
-    compile_wiki_file(file, HTML_DIR)
+    compile_wiki_file(file, WIKI_DIR, HTML_DIR)
   end
 end
