@@ -28,18 +28,24 @@ def copy_css(data_dir, compile_dir)
   end
 end
 
+def correct_links(html)
+  html.gsub!(/href=".*"/) {|match| match.chop.concat(".html\"") }
+end
+
 # Compile with WikiCreole every *.wiki file in the current directory 
 # and place the compiled files in the compile_dir directory.
 def compile_wiki_file(filename, wiki_dir, compile_dir)
   File.open(File.join(wiki_dir, filename)) do |file|
     wiki_file = file.read
-    File.open(File.join(HTML_DIR, filename.sub(/\.wiki$/, "")), 'w') do |out_file|
+    File.open(File.join(HTML_DIR, filename.sub(/\.wiki$/, "").concat(".html")), 'w') do |out_file|
       content = WikiCreole.creole_parse(wiki_file)
       html_file = ''
       File.open(File.join('data', 'default.html')) {|file| html_file = file.read}
       
       erb = ERB.new(html_file)
       html_file = erb.result(binding)
+      
+      correct_links(html_file)
       
       out_file.puts(html_file)
     end
