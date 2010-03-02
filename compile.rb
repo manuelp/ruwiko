@@ -10,7 +10,8 @@ WIKI_DIR = "wiki"
 def delete_dir dir_name
   puts "Deleting #{dir_name}..."
   files = Dir.entries(HTML_DIR)
-  files.shift(2) # Remove "." and ".." from the files' list
+  files.delete(".")
+  files.delete("..")
   files.each {|file| File.delete(File.join(HTML_DIR, file))}
   Dir.delete(HTML_DIR)
 end
