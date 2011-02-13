@@ -29,10 +29,6 @@ def copy_css(data_dir, compile_dir)
   end
 end
 
-def correct_links(html)
-  html.gsub!(/href=".*"/) {|match| match.chop.concat(".html\"") }
-end
-
 # Compile with WikiCreole every *.wiki file in the current directory 
 # and place the compiled files in the compile_dir directory.
 def compile_wiki_file(filename, wiki_dir, compile_dir)
@@ -45,9 +41,7 @@ def compile_wiki_file(filename, wiki_dir, compile_dir)
       
       erb = ERB.new(html_file)
       html_file = erb.result(binding)
-      
-      correct_links(html_file)
-      
+            
       out_file.puts(html_file)
     end
   end
